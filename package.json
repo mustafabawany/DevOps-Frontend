@@ -1,0 +1,27 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafabawany/DevOps-Frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mustafabawany/DevOps-Frontend/issues"
+  },
+  "homepage": "https://github.com/mustafabawany/DevOps-Frontend#readme",
+  "description": ""
+}
