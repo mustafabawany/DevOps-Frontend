@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 
 app.get("/", function(req, res){
-  http.get('http://devopsproject-backend.azurewebsites.net/' , (response) => {
+  http.get('http://devopsapp-backend.azurewebsites.net/' , (response) => {
     let data = '';
     response.on('data', (chunk) => {
       data += chunk;
@@ -36,7 +36,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/about", function(req, res){
-  http.get('http://devopsproject-backend.azurewebsites.net/about' , (response) => {
+  http.get('http://devopsapp-backend.azurewebsites.net/about' , (response) => {
     let data = '';
     response.on('data', (chunk) => {
       data += chunk;
@@ -54,7 +54,7 @@ app.get("/about", function(req, res){
 });
 
 app.get("/contact", function(req, res){
-  http.get('http://devopsproject-backend.azurewebsites.net/contact' , (response) => {
+  http.get('http://devopsapp-backend.azurewebsites.net/contact' , (response) => {
     let data = '';
     response.on('data', (chunk) => {
       data += chunk;
@@ -72,7 +72,7 @@ app.get("/contact", function(req, res){
 });
 
 app.get("/compose", function(req, res){
-  http.get('http://devopsproject-backend.azurewebsites.net/contact' , (response) => {
+  http.get('http://devopsapp-backend.azurewebsites.net/contact' , (response) => {
     if(response.statusCode === 200){
       res.render("compose")
     }
@@ -83,7 +83,7 @@ app.get("/compose", function(req, res){
 });
 
 app.post("/compose", function(req, res){
-  axios.post('http://devopsproject-backend.azurewebsites.net/compose?postTitle=' + req.body.postTitle + '&postBody=' + req.body.postBody)
+  axios.post('http://devopsapp-backend.azurewebsites.net/compose?postTitle=' + req.body.postTitle + '&postBody=' + req.body.postBody)
   .then(response => {
       res.redirect("/");
   })
@@ -94,7 +94,7 @@ app.post("/compose", function(req, res){
 
 app.get("/posts/:postName", function(req, res){
   const requestedTitle = _.lowerCase(req.params.postName);
-  http.get('http://devopsproject-backend.azurewebsites.net/posts/' + requestedTitle , (response) => {
+  http.get('http://devopsapp-backend.azurewebsites.net/posts/' + requestedTitle , (response) => {
     let data = '';
     response.on('data', (chunk) => {
       data += chunk;
